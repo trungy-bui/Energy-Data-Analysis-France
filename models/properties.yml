@@ -1,0 +1,41 @@
+models:
+  - name: stg_energy_generation
+    description: "Standardized energy generation data"
+    columns:
+      - name: date
+        description: "The date the amount of energy generation was recorded"
+        tests:
+          - not_null
+      - name: country
+        description: "Country"
+        tests:
+          - not_null
+      - name: energy_type
+        description: "The type of energy for the generation"
+        tests:
+          - not_null
+      - name: twh
+        description: "The amount of energy generation in TWH"
+        tests: 
+          - not_null
+  - name: stg_energy_consumption
+    description: "Standardized energy consumption data"
+    columns:
+      - name: date
+        description: "The date the amount of energy generation was recorded"
+        tests:
+          - not_null
+      - name: country
+        description: "Country"
+        tests:
+          - not_null
+      - name: energy_type
+        description: "The type of energy for the generation"
+        tests:
+          - not_null
+      - name: twh
+        description: "The amount of energy generation in TWH"
+        tests: 
+          - not_null
+  - name: fct_energy
+    description: "Standardized energy summary table"

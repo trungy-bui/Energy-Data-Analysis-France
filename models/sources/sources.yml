@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    database: EnergyDB
+    schema: raw
+    tables:
+      - name: generation
+      - name: capacity
+      - name: consumption
+      - name: emission
