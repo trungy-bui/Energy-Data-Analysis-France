@@ -48,7 +48,6 @@ final AS (
         COALESCE(c.consumption_twh, 0) AS consumption_twh,
         COALESCE(e.emission_mt, 0) AS emission_mt,
         COALESCE(cap.capacity_gw, 0) AS capacity_gw
-
     FROM generation g
     FULL OUTER JOIN consumption c
       ON g.date = c.date
