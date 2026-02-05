@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: raw
-    database: EnergyDB
-    schema: raw
+    database: Energy_DB
+    schema: RAW
     tables:
       - name: generation
       - name: capacity
