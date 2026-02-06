@@ -39,3 +39,5 @@ models:
           - not_null
   - name: fct_energy
     description: "Standardized energy summary table"
+  - name: energy_features
+    description: "Standardized energy features"

@@ -35,3 +35,6 @@ models:
     marts:
       +schema: marts
       +materialized: table
+    python:
+      +schema: sandbox
+      +materialized: table
