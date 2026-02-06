@@ -30,18 +30,18 @@ jobs:
         run: |
           cat <<EOF > profiles.yml
           dbt_energy_analysis:
-          target: ci
-          outputs:
-            ci:
-              type: snowflake
-              account: "${SNOWFLAKE_ACCOUNT}"
-              user: "${SNOWFLAKE_USER}"
-              password: "${SNOWFLAKE_PASSWORD}"
-              role: "${SNOWFLAKE_ROLE}"
-              database: "${SNOWFLAKE_DATABASE}"
-              warehouse: "${SNOWFLAKE_WAREHOUSE}"
-              schema: CI_${GITHUB_RUN_ID}
-              threads: 4
+            target: ci
+            outputs:
+              ci:
+                type: snowflake
+                account: "${SNOWFLAKE_ACCOUNT}"
+                user: "${SNOWFLAKE_USER}"
+                password: "${SNOWFLAKE_PASSWORD}"
+                role: "${SNOWFLAKE_ROLE}"
+                database: "${SNOWFLAKE_DATABASE}"
+                warehouse: "${SNOWFLAKE_WAREHOUSE}"
+                schema: CI_${GITHUB_RUN_ID}
+                threads: 4
           EOF
 
       - name: Run dbt debug
