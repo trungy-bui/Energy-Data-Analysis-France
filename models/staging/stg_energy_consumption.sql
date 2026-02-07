@@ -1,6 +1,6 @@
 WITH source_consumption AS (
     SELECT *
-    FROM {{ source('raw', 'consumption') }}
+    FROM {{ source('CONSUMPTION_RAW', 'CONSUMPTION_HISTORY') }}
 ),
 
 renamed AS (

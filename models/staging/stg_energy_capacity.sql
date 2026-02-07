@@ -1,6 +1,6 @@
 WITH source_capacity AS (
     SELECT *
-    FROM {{ source('raw', 'capacity') }}
+    FROM {{ source('CAPACITY_RAW', 'CAPACITY_HISTORY') }}
 ),
 
 renamed AS (

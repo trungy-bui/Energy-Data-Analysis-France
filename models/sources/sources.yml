@@ -1,11 +1,26 @@
 version: 2
 
 sources:
-  - name: raw
-    database: Energy_DB
-    schema: RAW
+  - name: GENERATION_RAW
+    database: ENERGY_RAW
+    schema: GENERATION
     tables:
-      - name: generation
-      - name: capacity
-      - name: consumption
-      - name: emission
+      - name: GENERATION_HISTORY
+
+  - name: CAPACITY_RAW
+    database: ENERGY_RAW
+    schema: CAPACITY
+    tables:
+      - name: CAPACITY_HISTORY
+
+  - name: CONSUMPTION_RAW
+    database: ENERGY_RAW
+    schema: CONSUMPTION
+    tables:
+      - name: CONSUMPTION_HISTORY
+
+  - name: EMISSION_RAW
+    database: ENERGY_RAW
+    schema: EMISSION
+    tables:
+      - name: EMISSION_HISTORY
