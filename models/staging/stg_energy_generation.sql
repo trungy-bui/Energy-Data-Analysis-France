@@ -1,6 +1,6 @@
 WITH source_generation AS (
     SELECT *
-    FROM {{ source('raw', 'generation') }}
+    FROM {{ source('GENERATION_RAW', 'GENERATION_HISTORY') }}
 ),
 
 renamed AS (

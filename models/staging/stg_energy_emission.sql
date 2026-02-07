@@ -1,6 +1,6 @@
 WITH source_emission AS (
     SELECT *
-    FROM {{ source('raw', 'emission') }}
+    FROM {{ source('EMISSION_RAW', 'EMISSION_HISTORY') }}
 ),
 
 renamed AS (
