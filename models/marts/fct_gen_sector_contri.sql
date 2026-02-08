@@ -5,8 +5,8 @@ WITH generation AS (
 )
 
 SELECT 
-    replace(g.energy_type, 'Toutes les filières', 'All sectors') AS energy_type,
-    round(sum(g.twh), 1) AS twh
+    REPLACE(g.energy_type, 'Toutes les filières', 'All sectors') AS energy_type,
+    ROUND(sum(g.twh), 1) AS twh
 FROM generation g
 GROUP BY 1
 ORDER BY 2 DESC
