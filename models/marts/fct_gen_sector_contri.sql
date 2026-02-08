@@ -6,7 +6,7 @@ WITH generation AS (
 
 SELECT 
     g.energy_type,
-    sum(g.twh) AS twh
+    round(sum(g.twh), 1) AS twh
 FROM generation g
 GROUP BY 1
 ORDER BY 2
