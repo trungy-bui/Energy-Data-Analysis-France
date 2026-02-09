@@ -1,7 +1,0 @@
-metrics:
-  - name: total_generation
-    description: Total energy generation in TWh
-    label: Total Generation
-    type: simple
-    type_params:
-      measure: generation_twh
