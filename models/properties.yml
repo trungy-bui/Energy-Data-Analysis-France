@@ -37,7 +37,7 @@ models:
         description: "The amount of energy generation in TWH"
         tests: 
           - not_null
-  - name: fct_energy
+  - name: int_energy
     description: "Standardized energy summary table"
   - name: fct_gen_sector_contri
     description: "Fact Generation Energy Sector Contribution"
