@@ -65,6 +65,17 @@ final AS (
      AND COALESCE(g.energy_type, c.energy_type, e.energy_type) = cap.energy_type
 )
 
-SELECT *
-FROM final
+SELECT 
+    f.date,
+    f.country,
+    CASE
+        WHEN f.energy_type = 'Toutes les filières' THEN 'All sectors'
+        WHEN f.energy_type = 'Biogaz' THEN 'Biogas'
+        ELSE f.energy_type
+    END AS energy_type,
+    f.generation_twh,
+    f.consumption_twh,
+    f.emission_mt,
+    f.capacity_gw
+FROM final f
 ORDER BY 1 -- Date
