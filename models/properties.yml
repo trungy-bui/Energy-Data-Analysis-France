@@ -16,7 +16,7 @@ models:
           - not_null
       - name: twh
         description: "The amount of energy generation in TWH"
-        tests: 
+        tests:
           - not_null
   - name: stg_energy_consumption
     description: "Standardized energy consumption data"
@@ -35,11 +35,15 @@ models:
           - not_null
       - name: twh
         description: "The amount of energy generation in TWH"
-        tests: 
+        tests:
           - not_null
   - name: int_energy
     description: "Standardized energy summary table"
-  - name: fct_gen_sector_contri
+  - name: fct_generation_sectors
     description: "Fact Generation Energy Sector Contribution"
+  - name: fct_emission_sectors
+    description: "Fact Emission Energy Sector Contribution"
+  - name: fct_consumption_sectors
+    description: "Fact Consumption Energy Sector Contribution"
   - name: energy_features
     description: "Standardized energy features"
