@@ -1,0 +1,29 @@
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# VS Code
+.vscode/
+
+# Node / tooling
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# aftman (this is causing most of your issue)
+.aftman/
+
+# Snowflake / credentials
+.env
+profiles.yml
+dbt_internal_packages/
+.user.yml
