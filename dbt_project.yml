@@ -29,6 +29,7 @@ clean-targets: # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_energy_analysis:
+    +materialized: table
     staging:
       +schema: staging
       +materialized: view

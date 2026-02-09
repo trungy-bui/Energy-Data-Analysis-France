@@ -7,7 +7,7 @@ from snowflake.snowpark.window import Window
 def model(dbt, session):
     dbt.config(materialized="table")
 
-    df = dbt.ref("fct_energy")
+    df = dbt.ref("int_energy")
 
     w = Window.partition_by()  # global window
 
