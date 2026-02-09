@@ -1,0 +1,8 @@
+metrics:
+  - name: total_generation
+    description: Total energy generation
+    label: Total Generation
+    model: ref('fct_consumption_sectors')
+    calculation_method: sum
+    expression: generation_twh
+    
