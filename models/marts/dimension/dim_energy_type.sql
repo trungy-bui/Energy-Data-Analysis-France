@@ -16,5 +16,5 @@ SELECT
         {%- for r in renewable -%}
             '{{ r }}'{% if not loop.last %}, {% endif %}
         {%- endfor -%}
-    ) as is_renewable,
+    ) as is_renewable
 FROM {{ ref("int_energy") }}
