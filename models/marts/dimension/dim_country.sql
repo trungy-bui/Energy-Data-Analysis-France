@@ -6,4 +6,4 @@ SELECT
         SUM(e.{{ s }}) AS total_{{ s }}{% if not loop.last %}, {% endif %}
     {% endfor -%}
 FROM {{ ref("int_energy") }} AS e
-GROUP BY e.country
+GROUP BY 1
