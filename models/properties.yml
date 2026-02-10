@@ -1,49 +1,89 @@
 models:
+  - name: int_energy
+    description: Standardized energy summary table
   - name: stg_energy_generation
-    description: "Standardized energy generation data"
+    description: Standardized energy generation data
     columns:
       - name: date
-        description: "The date the amount of energy generation was recorded"
+        description: The date the amount of energy generation was recorded
         tests:
           - not_null
       - name: country
-        description: "Country"
+        description: Country
         tests:
           - not_null
       - name: energy_type
-        description: "The type of energy for the generation"
+        description: The type of energy for the generation
         tests:
           - not_null
       - name: twh
-        description: "The amount of energy generation in TWH"
+        description: The amount of energy generation in TWH
         tests:
           - not_null
   - name: stg_energy_consumption
-    description: "Standardized energy consumption data"
+    description: Standardized energy consumption data
     columns:
       - name: date
-        description: "The date the amount of energy generation was recorded"
+        description: The date the amount of energy generation was recorded
         tests:
           - not_null
       - name: country
-        description: "Country"
+        description: Country
         tests:
           - not_null
       - name: energy_type
-        description: "The type of energy for the generation"
+        description: The type of energy for the generation
         tests:
           - not_null
       - name: twh
-        description: "The amount of energy generation in TWH"
+        description: The amount of energy generation in TWH
         tests:
           - not_null
-  - name: int_energy
-    description: "Standardized energy summary table"
+  - name: dim_country
+    description: Country dimension
+    columns:
+      - name: country
+        description: Country
+        tests:
+          - unique
+          - not_null
+      - name: total_generation_twh 
+        description: The total generation TWH for the country
+        tests:
+          - not_null
+      - name: total_consumption_twh 
+        description: The total consumption TWH for the country
+        tests:
+          - not_null
+      - name: total_emission_mt 
+        description: The total emission MT for the country
+        tests:
+          - not_null
+      - name: total_capacity_gw
+        description: The total capacity GW for the country
+        tests:
+          - not_null
+  - name: dim_energy_type
+    description: Energy type dimension
+    columns:
+      - name: energy_type
+        description: Energy type
+        tests:
+          - unique
+          - not_null
+      - name: energy_category
+        description: The energy category (Renewable or Fossil Fuel)
+        tests:
+          - not_null
+      - name: is_renewable
+        description: A FFlag whether it is renewable or not
+        tests:
+          - not_null
   - name: fct_generation_sectors
-    description: "Fact Generation Energy Sector Contribution"
+    description: Fact Generation Energy Sector Contribution
   - name: fct_emission_sectors
-    description: "Fact Emission Energy Sector Contribution"
+    description: Fact Emission Energy Sector Contribution
   - name: fct_consumption_sectors
-    description: "Fact Consumption Energy Sector Contribution"
+    description: Fact Consumption Energy Sector Contribution
   - name: energy_features
-    description: "Standardized energy features"
+    description: Standardized energy features
