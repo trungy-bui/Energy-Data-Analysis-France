@@ -1,14 +1,12 @@
-WITh int_energy AS 
+WITH int_energy AS 
 (
-    SELECT 
-        * 
+    SELECT * 
     FROM {{ ref("int_energy") }}
 ),
 
 dim_energy_type AS 
 (
-    SELECT
-        *
+    SELECT *
     FROM {{ ref("dim_energy_type") }}
 ),
 
@@ -33,28 +31,12 @@ aggregated AS
         country,
         energy_type,
         energy_category,
-        (SUM(generation_twh) - SUM(consumption_twh)) AS total_net_energy,
+        SUM(generation_twh) AS total_generation_twh,
+        SUM(consumption_twh) AS total_consumption_twh,
+        SUM(generation_twh) - SUM(consumption_twh) AS total_net_energy
     FROM joined
     GROUP BY 1, 2, 3, 4
-),
-
-windowed AS 
-(
-    SELECT 
-        * ,
-        {{ running_total(
-            column_name="total_net_energy",
-            partition_by="country",
-            order_by="date"
-        ) }} AS running_net_energy
-    FROM aggregated
-),
-
-final_net AS 
-(
-    SELECT 
-        *
-    FROM windowed
 )
 
-SELECT * FROM final_net
+SELECT *
+FROM aggregated
