@@ -1,0 +1,39 @@
+version: 2
+
+semantic_models:
+  - name: emission_intensity
+    description: Emission Intensity Fact table
+    model: ref('fct_emission_intensity')
+
+    entities:
+      - name: country
+        type: primary
+        expr: country
+    dimensions:
+      - name: date
+        type: time
+        expr: date
+        type_params:
+          time_granularity: day
+    measures:
+      - name: total_emissions
+        description: Total emissions per country per day
+        expr: total_emissions
+        agg: sum
+      - name: running_energy_emission
+        description: Running cumulative emissions per country
+        expr: running_energy_emission
+        agg: max
+
+metrics:
+  - name: total_emissions_metric
+    label: Total Emissions
+    type: simple
+    type_params:
+      measure: total_emissions
+
+  - name: cumulative_emissions
+    label: Cumulative Emissions
+    type: simple
+    type_params:
+      measure: running_energy_emission
