@@ -79,11 +79,49 @@ models:
         description: A FFlag whether it is renewable or not
         tests:
           - not_null
-  - name: fct_generation_sectors
-    description: Fact Generation Energy Sector Contribution
-  - name: fct_emission_sectors
-    description: Fact Emission Energy Sector Contribution
-  - name: fct_consumption_sectors
-    description: Fact Consumption Energy Sector Contribution
-  - name: energy_features
-    description: Standardized energy features
+  - name: fct_emission_intensity
+    description: Fact emission intensity table
+    columns:
+      - name: date
+        description: The date the emission intensity was recorded
+        tests:
+          - not_null
+      - name: country
+        description: The country where the emission intensity was recorded
+        tests:
+          - not_null
+      - name: total_emissions
+        description: The total emissions
+        tests:
+          - not_null
+      - name: running_energy_emission
+        description: Running total energy emission
+        tests:
+          - not_null
+  - name: fct_energy_net
+    description: Fact energy net table
+    columns:
+      - name: date
+        description: The date the energy net was recorded
+        tests:
+          - not_null
+      - name: country
+        description: The country where the energy net was recorded
+        tests:
+          - not_null
+      - name: energy_type
+        description: The energy type
+        tests:
+          - not_null
+      - name: energy_category
+        description: The energy type
+        tests:
+          - not_null
+      - name: total_net_energy
+        description: Total net energy
+        tests:
+          - not_null
+      - name: running_net_energy
+        description: Running total net energy
+        tests:
+          - not_null
