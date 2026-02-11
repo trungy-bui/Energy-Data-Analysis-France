@@ -47,15 +47,15 @@ models:
         tests:
           - unique
           - not_null
-      - name: total_generation_twh 
+      - name: total_generation_twh
         description: The total generation TWH for the country
         tests:
           - not_null
-      - name: total_consumption_twh 
+      - name: total_consumption_twh
         description: The total consumption TWH for the country
         tests:
           - not_null
-      - name: total_emission_mt 
+      - name: total_emission_mt
         description: The total emission MT for the country
         tests:
           - not_null
@@ -94,8 +94,8 @@ models:
         description: The total emissions
         tests:
           - not_null
-      - name: running_energy_emission
-        description: Running total energy emission
+      - name: total_generation_twh
+        description: The total generation
         tests:
           - not_null
   - name: fct_energy_net
@@ -117,11 +117,15 @@ models:
         description: The energy type
         tests:
           - not_null
-      - name: total_net_energy
-        description: Total net energy
+      - name: total_generation_twh
+        description: Total generation twh
         tests:
           - not_null
-      - name: running_net_energy
-        description: Running total net energy
+      - name: total_consumption_twh
+        description: Total consumption twh
+        tests:
+          - not_null
+      - name: total_net_energy
+        description: Total net energy
         tests:
           - not_null

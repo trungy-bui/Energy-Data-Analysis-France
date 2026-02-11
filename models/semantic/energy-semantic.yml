@@ -1,5 +1,14 @@
 version: 2
 
+models:
+  - name: time_spine_daily
+    description: Daily time spine for MetricFlow
+    time_spine:
+      standard_granularity_column: date_day
+    columns:
+      - name: date_day
+        granularity: day
+
 semantic_models:
   - name: emission_intensity
     description: >
@@ -26,91 +35,11 @@ semantic_models:
         agg: sum
         expr: total_emissions
 
-      - name: total_generation_twh
-        description: Total energy generation in TWh.
-        agg: sum
-        expr: total_generation_twh
-  - name: energy_net
-    description: >
-      Net energy production by country and energy type.
-    model: ref('fct_energy_net')
-    defaults:
-      agg_time_dimension: date
-
-    entities:
-      - name: country
-        type: primary
-        expr: country
-
-      - name: energy_type
-        type: foreign
-        expr: energy_type
-    dimensions:
-      - name: date
-        type: time
-        expr: date
-        type_params:
-          time_granularity: day
-      - name: energy_category
-        type: categorical
-        expr: energy_category
-    measures:
-      - name: total_generation_twh
-        agg: sum
-        expr: total_generation_twh
-
-      - name: total_consumption_twh
-        agg: sum
-        expr: total_consumption_twh
-
-      - name: total_net_energy
-        agg: sum
-        expr: total_net_energy
-
 metrics:
-  - name: emissions
-    label: Total Emissions
+  - name: total_emissions
+    description: The total emissions
+    label: total_emissions
     type: simple
     type_params:
-      measure: total_emissions
-
-  - name: energy_generation
-    label: Total Energy Generation
-    type: simple
-    type_params:
-      measure: total_generation_twh
-
-  - name: emission_intensity
-    label: Emission Intensity
-    type: derived
-    type_params:
-      expr: emissions / energy_generation
-      metrics:
-        - emissions
-        - energy_generation
-  - name: cumulative_emissions
-    label: Cumulative Emissions
-    type: cumulative
-    type_params:
-      measure: total_emissions
-      grain_to_date: day
-  - name: net_energy
-    label: Net Energy
-    type: simple
-    type_params:
-      measure: total_net_energy
-
-  - name: cumulative_net_energy
-    label: Cumulative Net Energy
-    type: cumulative
-    type_params:
-      measure: total_net_energy
-      grain_to_date: day
-
-  - name: renewable_net_energy
-    label: Renewable Net Energy
-    type: simple
-    type_params:
-      measure: total_net_energy
-    filter: |
-      {{ Dimension('energy_category') }} = 'Renewable'
+      measure:
+        name: total_emissions
