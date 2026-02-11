@@ -42,12 +42,11 @@ windowed AS
 (
     SELECT 
         * ,
-        SUM(total_net_energy)
-             OVER (
-                PARTITION BY country
-                ORDER BY date
-                ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
-            ) as running_net_energy
+        {{ running_total(
+            column_name="total_net_energy",
+            partition_by="country",
+            order_by="date"
+        ) }} AS running_net_energy
     FROM aggregated
 ),
 
