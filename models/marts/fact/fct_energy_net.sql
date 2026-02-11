@@ -50,11 +50,11 @@ windowed AS
     FROM aggregated
 ),
 
-final AS 
+final_net AS 
 (
     SELECT 
         *
     FROM windowed
 )
 
-SELECT * FROM final
+SELECT * FROM final_net
