@@ -1,0 +1,4 @@
+data_tests:
+  - name: asset-renewable-net-is-positive
+    description: >
+      Renewable energy net should always be positive
