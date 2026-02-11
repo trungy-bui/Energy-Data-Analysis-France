@@ -27,3 +27,5 @@ Thumbs.db
 profiles.yml
 dbt_internal_packages/
 .user.yml
+*.p8
+*.pem
