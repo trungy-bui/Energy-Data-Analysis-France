@@ -94,8 +94,16 @@ models:
         description: The total emissions
         tests:
           - not_null
-      - name: total_generation_twh
+      - name: total_generation
         description: The total generation
+        tests:
+          - not_null
+      - name: running_emissions_mt
+        description: The running emissions mt
+        tests:
+          - not_null
+      - name: running_generation_twh
+        description: The running emissions mt
         tests:
           - not_null
   - name: fct_energy_net
@@ -117,15 +125,11 @@ models:
         description: The energy type
         tests:
           - not_null
-      - name: total_generation_twh
+      - name: net_energy_twh
         description: Total generation twh
         tests:
           - not_null
-      - name: total_consumption_twh
+      - name: running_total_net
         description: Total consumption twh
-        tests:
-          - not_null
-      - name: total_net_energy
-        description: Total net energy
         tests:
           - not_null

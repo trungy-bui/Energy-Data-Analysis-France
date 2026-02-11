@@ -1,4 +1,4 @@
 SELECT *
 FROM {{ ref('fct_energy_net') }}
 WHERE energy_category = 'Renewable'
-AND total_net_energy < 0
+AND net_energy_twh < 0
