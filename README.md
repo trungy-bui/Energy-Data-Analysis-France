@@ -91,6 +91,8 @@ Emissions intensity is falling over time, confirming structural decarbonization 
 
 <img width="685" height="450" alt="image" src="https://github.com/user-attachments/assets/b02c2826-2212-4c2e-9de7-de89dc6c7026" />
 
+---
+
 # Recommendations:
 Based on our analysis and findings, we would propose the following strategies:
 * **Prioritize Grid Flexibility & Storage**. Invest in storage, demand response, and flexible generation to manage seasonality and peak-emission periods without reverting to high-carbon sources.
@@ -104,6 +106,8 @@ Below is an image of our forecasted and actual values (
 * Add Forecasting & Scenario Analysis
 * Integrate Cost & Economic Signals
 * Track Reliability & Flexibility Metrics
+
+---
 
 # License
 This project is licensed under the [Open Source Initiative (OSI)](https://opensource.org/) approved GNU General Public License v3.0 License - see the [LICENSE.txt](LICENSE.txt) file for details.<br>
