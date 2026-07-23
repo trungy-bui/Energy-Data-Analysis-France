@@ -3,4 +3,4 @@ WITH source_generation AS (
     FROM {{ source('GENERATION_RAW', 'GENERATION_HISTORY') }}
 ),
 
-SELECT SELECT(*) FROM source_generation
+SELECT SELECT(*), testing_generaiton FROM source_generation
