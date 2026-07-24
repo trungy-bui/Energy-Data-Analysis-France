@@ -3,6 +3,8 @@ WITH source_capacity AS (
     FROM {{ source('CAPACITY_RAW', 'CAPACITY_HISTORY') }}
 ),
 
+SELECT * FROM source_capacity
+
 renamed AS (
     SELECT
         cap."Date"            AS date,
