@@ -1,8 +1,5 @@
 # Energy Exploratory Data Analysis
 
-# Overview
-This project analyzes historical electricity generation and emissions data (2016–2025) for Germany and compares it to France, Poland, and Denmark.
-
 # Executive Summary
 From 2016–2025, emissions decline while electricity generation increasingly decouples from emissions, showing that new demand is being met by cleaner energy. Renewables are taking a larger share of the mix, driving lower emissions per unit of power. Installed capacity is growing faster than output due to intermittent renewables, improving emissions performance but creating grid efficiency challenges. Emissions remain concentrated in a few key countries, so progress there drives most regional impact.
 
