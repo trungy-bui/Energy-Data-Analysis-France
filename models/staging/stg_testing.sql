@@ -16,7 +16,7 @@ cleaned AS (
         date, 
         country, 
         energy_type,
-        {{ format_int('twh') }} AS twh
+        {{ round_number('twh') }} AS twh
     FROM renamed
 )
 
