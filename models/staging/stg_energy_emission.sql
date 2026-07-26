@@ -8,7 +8,6 @@ renamed AS (
         e."Date"            AS date,
         e."Pays"            AS country,
         e."Filière"         AS energy_type,
-        e."Valeur (Mt)"    AS mt
     FROM source_emission  AS e
 ),
 
