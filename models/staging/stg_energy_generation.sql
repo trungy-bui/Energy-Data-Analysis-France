@@ -7,8 +7,8 @@ renamed AS (
     SELECT
         g."Date"            AS date,
         g."Pays"            AS country,
-        g."Filière"         AS energy_type,
-        g."Valeur (TWh)"    AS twh
+        g."Filière"         AS energy_type
+        g."Valeur (TWh)s"    AS twh
     FROM source_generation  AS g
 ),
 
