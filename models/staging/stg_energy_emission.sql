@@ -17,7 +17,7 @@ cleaned AS (
         date, 
         country, 
         energy_type,
-        {{ format_int('mt') }} AS mt
+        {{ round_currency('mt') }} AS mt
     FROM renamed
 )
 
