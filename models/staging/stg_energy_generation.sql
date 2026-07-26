@@ -8,7 +8,6 @@ renamed AS (
         g."Date"            AS date,
         g."Pays"            AS country,
         g."Filière"         AS energy_type,
-        g."Valeur (TWh)"    AS twh
     FROM source_generation  AS g
 ),
 
