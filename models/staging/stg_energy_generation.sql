@@ -20,5 +20,7 @@ cleaned AS (
     FROM renamed
 )
 
+SELECT * FROM cleaned
+    
 SELECT *
 FROM cleaned
