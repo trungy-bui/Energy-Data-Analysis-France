@@ -21,5 +21,7 @@ cleaned AS (
     FROM renamed
 )
 
-SELECT *
+SELECT 
+    *,
+    testing
 FROM cleaned
