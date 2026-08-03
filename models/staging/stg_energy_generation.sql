@@ -21,5 +21,7 @@ cleaned AS (
     FROM renamed
 )
 
+    SELECT * FROM 
+
 SELECT *
 FROM cleaned
