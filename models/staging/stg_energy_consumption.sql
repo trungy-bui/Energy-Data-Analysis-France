@@ -5,10 +5,10 @@ WITH source_consumption AS (
 
 renamed AS (
     SELECT
-        g."Date"            AS date,
-        g."Pays"            AS country,
-        g."Filière"         AS energy_type,
-        g."Valeur (TWh)"    AS twh
+        g."Date"            AS renamed_date,
+        g."Pays"            AS renamed_country,
+        g."Filière"         AS renamed_energy_type,
+        g."Valeur (TWh)"    AS renamed_twh
     FROM source_consumption  AS g
 ),
 
